@@ -110,9 +110,7 @@
 
 <script>
   // ---- CONFIGURAÇÃO ----
-  // TODO: substituir pelo número real do WhatsApp do escritório,
-  // formato internacional sem símbolos: DDI + DDD + número (ex: 5581999999999)
-  const WHATSAPP_NUMBER = '';
+  const WHATSAPP_NUMBER = '5581997070435';
   const REDIRECT_SECONDS = 3;
   // -----------------------
 
@@ -123,13 +121,9 @@
     document.getElementById('greeting').textContent = 'Obrigado, ' + nome + '!';
   }
 
-  const defaultMessage = nome
-    ? `Olá, me chamo ${nome} e preenchi o formulário do site. Gostaria de falar sobre o meu caso.`
-    : 'Olá, preenchi o formulário do site e gostaria de falar sobre o meu caso.';
+  const defaultMessage = 'Olá, vim do google e quero falar com um advogado especialista';
 
-  const waHref = WHATSAPP_NUMBER
-    ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(defaultMessage)}`
-    : '/index.html#formulario'; // fallback enquanto o número não é configurado
+  const waHref = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(defaultMessage)}`;
 
   document.getElementById('waLink').href = waHref;
 
